@@ -147,7 +147,7 @@ const Auth = () => {
               <TiSocialTwitter size={36} color="#03a9f4" />
             </div>
             <div>
-              <p className="text-xs">
+              <p className="text-xs text-center">
                 By creating an account, you agree to{" "}
                 <span className="text-[#03a9f4]">
                   Glide Free membership agreement{" "}
