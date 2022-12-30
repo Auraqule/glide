@@ -12,7 +12,7 @@ import VendorTab1 from "./VendorTab1";
 import VendorTab2 from "./VendorTab2";
 import VendorTab3 from "./VendorTab3";
 import VendorRegComplete from "./VendorRegComplete";
-import Loading from "./Loading";
+import Loader from "./Loader";
 
 export {
   ProductList,
@@ -29,5 +29,5 @@ export {
   VendorTab2,
   VendorTab3,
   VendorRegComplete,
-  Loading,
+  Loader,
 };

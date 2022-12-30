@@ -5,26 +5,36 @@ import { useRouter } from "next/navigation";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { auth } from "./firebase";
 
-const SignIn = () => {
+type PageProps = {
+  toast: any;
+  setIsLoading: any;
+};
+
+const SignIn = ({ toast, setIsLoading }: PageProps) => {
   const router = useRouter();
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
+        router.push("/dashboard");
+        toast.success("Welcome back 😊");
+
         const user = userCredential.user;
         setEmail("");
         setPassword("");
-        router.push("dashboard");
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-      });
+        toast.error(errorCode);
+      })
+      .finally(() => setIsLoading(false));
   };
   return (
     <form onSubmit={submitHandler} className="flex flex-col  text-[#787885]">

@@ -2,6 +2,7 @@ import { Product } from "../typings";
 import { AiOutlineHeart, MdOutlineStar, MdOutlineStarHalf } from "../constants";
 import Ads from "./Ads";
 import MiniInfo from "./MiniInfo";
+import Link from "next/link";
 const getProducts = async () => {
   const res = await fetch("https://fakestoreapi.com/products");
   const products: Product[] = await res.json();
@@ -17,7 +18,10 @@ const Card = ({
   },
 }: any) => {
   return (
-    <div className="px-4 pb-2 flex hover:shadow-xl cursor-pointer flex-col items-center ">
+    <Link
+      href={`/product/${title}`}
+      className="px-4 pb-2 flex hover:shadow-xl cursor-pointer flex-col items-center "
+    >
       <img
         className="w-[190px] h-[190px] object-contain"
         src={image}
@@ -48,7 +52,7 @@ const Card = ({
           <p className="">watch</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 const ProductList = async () => {

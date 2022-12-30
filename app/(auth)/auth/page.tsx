@@ -1,11 +1,14 @@
 "use client";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoEyeOutline } from "react-icons/io5";
-import { Loading, SignIn } from "../../../components";
+import { Loader, SignIn } from "../../../components";
 import { auth, db } from "../../../components/firebase";
+import hashPassword from "../../../components/utils/encrypt";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 import {
   FcGoogle,
   BsFacebook,
@@ -24,40 +27,55 @@ const Auth = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   // ---------------FUNCTIONS------------------
-  const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     setIsLoading(true);
+    const hashedPassword = hashPassword(password);
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+    async function createAndSignInUser() {
+      try {
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
         // Signed in
         const user = userCredential.user;
         // console.log(user.uid);
         try {
-          setDoc(doc(db, "users", user.uid), {
+          await setDoc(doc(db, "users", user.uid), {
             userID: user.uid,
             email,
-            password,
+            sword: password,
+            password: hashedPassword.password,
+            key: hashedPassword.salt,
+            timestamp: serverTimestamp(),
           });
-        } catch (error) {
+        } catch (error: any) {
           console.log(error);
         }
+        router.push("/dashboard");
+        toast.success("Registeration Success 😊");
         setEmail("");
         setPassword("");
         setReferralCode("");
-        router.push("dashboard");
-        // ...
-      })
-      .catch((error) => {
+      } catch (error: any) {
         const errorCode = error.code;
         const errorMessage = error.message;
+        toast.error(errorCode);
         // ..
-      })
-      .finally(() => setIsLoading(false));
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    //    -----------👇CALL THE FUCNTION HERE-----------
+    createAndSignInUser();
+    //
   };
 
   return (
     <div className="w-screen h-screen flex justify-center pt-8">
-      {isLoading && <Loading />}
+      <ToastContainer position="top-center" autoClose={3000} />
+      {isLoading && <Loader />}
       <div className="w-1/2 min-w-[300px] sm:min-w-[320px] max-w-[600px] flex flex-col items-center">
         <img src="/logo.svg" alt="glide logo" />
         <div className="mt-8 mb-6 sm:mb-12">
@@ -136,7 +154,7 @@ const Auth = () => {
               </button>
             </form>
           ) : (
-            <SignIn />
+            <SignIn toast={toast} setIsLoading={setIsLoading} />
           )}
           {/* OTHER AUTH METHODS */}
           <div className=" my-6 sm:my-10 w-full flex flex-col items-center">
