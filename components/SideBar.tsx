@@ -9,7 +9,7 @@ import {
   HiOutlineLightBulb,
   HiOutlineBuildingOffice2,
   MdComputer,
-  CiCircleMore,
+  CgMoreO,
   FaBaby,
   BiDumbbell,
   BiStore,
@@ -67,7 +67,7 @@ const sideData = [
 ];
 const SideBar = () => {
   return (
-    <aside className="w-[240px] ">
+    <aside className="w-[160px] xl:w-[240px] ">
       <div className="flex space-x-2 text-[#000066] items-center">
         <BiCategory size={16} />
         <p>Categories</p>
@@ -101,7 +101,7 @@ const SideBar = () => {
             ) : i === 10 ? (
               <BiDumbbell size={16} color="" />
             ) : (
-              <CiCircleMore size={16} color="" />
+              <CgMoreO size={16} color="" />
             )}
 
             <p className="hover:text-[#2979FF]">{item.title}</p>

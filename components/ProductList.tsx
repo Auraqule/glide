@@ -10,6 +10,7 @@ const getProducts = async () => {
 };
 const Card = ({
   item: {
+    id,
     title,
     description,
     image,
@@ -19,13 +20,14 @@ const Card = ({
 }: any) => {
   return (
     <Link
-      href={`/product/${title}`}
+      href={`/product/${id}`}
       className="px-4 pb-2 flex hover:shadow-xl cursor-pointer flex-col items-center "
     >
       <img
         className="w-[190px] h-[190px] object-contain"
         src={image}
         alt={title}
+        placeholder="blur"
       />
       <p className="text-sm mt-3 capitalize ">{description.slice(0, 80)}</p>
       <div className="self-start flex justify-between">
@@ -65,10 +67,10 @@ const ProductList = async () => {
           style={{
             boxShadow: "0px -3px 9px -3px rgba(0,0,0,0.1)",
           }}
-          className="text-darkText rounded-lg px-4 grid py-4 gap-4 grid-cols-4   bg-white"
+          className="text-darkText rounded-lg px-4 grid py-4 gap-4 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4  bg-white"
         >
-          {products.map((item, i) => (
-            <Card key={i} item={item} />
+          {products.map((item) => (
+            <Card key={item.id} item={item} />
           ))}
         </div>
       </main>

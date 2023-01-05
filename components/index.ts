@@ -13,6 +13,8 @@ import VendorTab2 from "./VendorTab2";
 import VendorTab3 from "./VendorTab3";
 import VendorRegComplete from "./VendorRegComplete";
 import Loader from "./Loader";
+import ProductInfoTab from "./ProductInfoTab";
+import RelatedProducts from "./RelatedProducts";
 
 export {
   ProductList,
@@ -30,4 +32,6 @@ export {
   VendorTab3,
   VendorRegComplete,
   Loader,
+  ProductInfoTab,
+  RelatedProducts,
 };

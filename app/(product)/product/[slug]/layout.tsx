@@ -1,4 +1,4 @@
-// import { VendorNav } from "../../../components";
+import { Footer, VendorNav } from "../../../../components";
 import "../../../../styles/globals.css";
 
 export default function RootLayout({
@@ -10,8 +10,9 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className="bg-[#f5f5f5]">
-        {/* <VendorNav /> */}
+        <VendorNav />
         {children}
+        <Footer />
       </body>
     </html>
   );

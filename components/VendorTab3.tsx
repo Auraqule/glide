@@ -34,7 +34,7 @@ const VendorTab3 = ({ setIsRegComplete, setSelectedTabId }: Iprops) => {
         />
 
         <button
-          className="px-[25px] mt-10 text-white w-full py-3 rounded-[30px] border bg-primaryBlue"
+          className="px-[25px] mt-10 text-white w-full py-3 rounded-[20px] sm:rounded-[30px] border bg-primaryBlue"
           type="submit"
         >
           Complete

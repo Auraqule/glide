@@ -1,5 +1,4 @@
 "use client";
-
 import { TbHanger } from "react-icons/tb";
 import {
   MdLocalMovies,
@@ -7,13 +6,14 @@ import {
   MdOutlineStarHalf,
   MdSecurity,
   MdComputer,
+  MdOutlineShoppingCart,
 } from "react-icons/md";
 import {
   HiMusicalNote,
   HiOutlineLightBulb,
   HiOutlineBuildingOffice2,
 } from "react-icons/hi2";
-import { BiDumbbell, BiCategory, BiStore } from "react-icons/bi";
+import { BiDumbbell, BiCategory, BiStore, BiMenu } from "react-icons/bi";
 import { FaBone, FaBabyCarriage, FaBaby } from "react-icons/fa";
 import { GoTelescope, GoCreditCard } from "react-icons/go";
 import { ImLeaf } from "react-icons/im";
@@ -27,7 +27,7 @@ import {
   GiSewedShell,
 } from "react-icons/gi";
 import { BsPhone, BsFacebook } from "react-icons/bs";
-import { CiCircleMore } from "react-icons/ci";
+import { CgMoreO } from "react-icons/cg";
 import {
   IoGameControllerOutline,
   IoWatchOutline,
@@ -71,11 +71,13 @@ export {
   HiOutlineLightBulb,
   HiOutlineBuildingOffice2,
   MdComputer,
-  CiCircleMore,
+  CgMoreO,
   FaBaby,
   BiStore,
   BsPhone,
   FcGoogle,
   BsFacebook,
   IoEyeOffOutline,
+  MdOutlineShoppingCart,
+  BiMenu,
 };

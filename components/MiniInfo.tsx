@@ -4,15 +4,15 @@ import { GiReceiveMoney, GoCreditCard, MdSecurity } from "../constants";
 
 const MiniInfo = () => {
   return (
-    <div className="grid my-8 justify-center gap-4 grid-cols-3 w-full">
-      <div className="px-4 rounded-md flex flex-col items-center py-6 text-center bg-[#EDEDF0]">
+    <div className="grid my-8 justify-center gap-2 md:gap-4 grid-cols-1 md:grid-cols-3 w-full">
+      <div className="px-4  rounded-md flex flex-col items-center py-6 text-center bg-[#EDEDF0]">
         <GiReceiveMoney size={24} color="#2979FF" />
         <p className="font-bold mt-4">Great value</p>
         <p className="text-sm">
           We offer competitive prices on over 100 million items.
         </p>
       </div>
-      <div className="px-4 rounded-md flex flex-col items-center py-6 text-center bg-[#EDEDF0]">
+      <div className="px-4  rounded-md flex flex-col items-center py-6 text-center bg-[#EDEDF0]">
         <GoCreditCard size={24} color="#FF3366" />
         <p className="font-bold mt-4">Safe payment</p>
         <p className="text-sm">

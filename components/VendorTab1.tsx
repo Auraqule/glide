@@ -55,7 +55,7 @@ const VendorTab1 = ({ setSelectedTabId }: Iprops) => {
           <IoEyeOffOutline size={24} />
         </div>
         <button
-          className="px-[25px] mt-10 text-white w-full py-3 rounded-[30px] border bg-primaryBlue"
+          className="px-[25px] mt-10 text-white w-full py-3 rounded-[20px] sm:rounded-[30px] border bg-primaryBlue"
           type="submit"
         >
           Continue

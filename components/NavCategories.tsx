@@ -51,11 +51,11 @@ const DATA = [
 const NavCategories = () => {
   const [selectedId, setSelectedId] = useState<string>("");
   return (
-    <div className="flex mt-6 mb-8 w-[78%] mx-auto  justify-center space-x-2">
+    <div className="flex mt-2 sm:mt-6  sm:mb-8 w-[90%] pl-16 sm:w-[78%] overflow-x-scroll scrollbar-hide mx-auto  justify-center space-x-2">
       {DATA.map((item, i) => (
         <div
           onClick={() => setSelectedId(`${i}_key`)}
-          className={`flex flex-col p-2 hover:text-[#2979FF]  rounded-[10px] cursor-pointer ${
+          className={`flex flex-col scroll-m-8   p-2 text-center sm:text-left hover:text-[#2979FF]  rounded-[10px] cursor-pointer ${
             selectedId === i + "_key"
               ? "bg-blue-100 text-[#2979FF]"
               : "text-gray-500"
@@ -86,7 +86,7 @@ const NavCategories = () => {
             <GiNuclear />
           )}
           <p
-            className={`text-xs hover:text-[#2979FF] ${
+            className={`text-xs min-w-[60px] hover:text-[#2979FF] ${
               selectedId === i + "_key" ? "text-[#2979FF]" : "text-gray-500"
             } `}
           >
