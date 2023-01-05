@@ -7,6 +7,10 @@ import {
   MdSecurity,
   MdComputer,
   MdOutlineShoppingCart,
+  MdOutlineClose,
+  MdOutlineMarkEmailUnread,
+  MdOutlineReviews,
+  MdPersonOutline,
 } from "react-icons/md";
 import {
   HiMusicalNote,
@@ -15,10 +19,14 @@ import {
 } from "react-icons/hi2";
 import { BiDumbbell, BiCategory, BiStore, BiMenu } from "react-icons/bi";
 import { FaBone, FaBabyCarriage, FaBaby } from "react-icons/fa";
-import { GoTelescope, GoCreditCard } from "react-icons/go";
+import { GoTelescope, GoCreditCard, GoGift } from "react-icons/go";
 import { ImLeaf } from "react-icons/im";
 import { FcGoogle } from "react-icons/fc";
-import { AiOutlineThunderbolt, AiOutlineHeart } from "react-icons/ai";
+import {
+  AiOutlineThunderbolt,
+  AiOutlineHeart,
+  AiOutlineUnorderedList,
+} from "react-icons/ai";
 import {
   GiNuclear,
   GiKnifeFork,
@@ -80,4 +88,10 @@ export {
   IoEyeOffOutline,
   MdOutlineShoppingCart,
   BiMenu,
+  MdOutlineClose,
+  MdOutlineMarkEmailUnread,
+  GoGift,
+  AiOutlineUnorderedList,
+  MdOutlineReviews,
+  MdPersonOutline,
 };

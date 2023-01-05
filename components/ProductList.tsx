@@ -49,7 +49,7 @@ const Card = ({
           </div>
           <p className="text-xs text-[#787885]">{rate}</p>
         </div>
-        <div className="text-xs flex items-center space-x-[2px]  text-secondaryBlue py-[2px] px-1 ring-[1px] rounded ring-[#9DC2FF]">
+        <div className="text-xs flex items-center space-x-[2px]  text-secondaryBlue py-[3px] px-2 sm:py-[2px] sm:px-1 ring-[1px] rounded ring-[#9DC2FF]">
           <AiOutlineHeart size={12} color="#2979FF" />
           <p className="">watch</p>
         </div>
